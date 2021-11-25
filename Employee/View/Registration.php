@@ -31,9 +31,9 @@
 				<tr>
 					<td>Gender:</td>
 					<td>
-						<input type="radio" name="gender" value="">Male
-						<input type="radio" name="gender" value="">Female
-						<input type="radio" name="gender" value="">Other
+						<input type="radio" name="gender" value="male">Male
+						<input type="radio" name="gender" value="female">Female
+						<input type="radio" name="gender" value="other">Other
 					</td>
 				</tr>
 				<tr>

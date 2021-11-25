@@ -1,4 +1,5 @@
 <?php 
+	require_once('../Model/signupModel.php');
 
 	if(isset($_POST['submit'])){
 
@@ -7,6 +8,8 @@
 		$username = $_POST['username'] ;
 		$password = $_POST['password'];
 		$confirmpassword = $_POST['confirmpassword'];
+		$gender = $_POST['gender'];
+		$dob = $_POST['date'];
 
 		if($name != ""){
 			if($username != ""){
@@ -14,15 +17,17 @@
 					if($password = $confirmpassword){
 						if($email !=""){
 
-						setcookie('name', $name, time()+3600, '/');
-						setcookie('email', $email, time()+3600, '/');
-						setcookie('username', $username, time()+3600, '/');
-						setcookie('password', $password, time()+3600, '/');
+							$user = ['name'=>$name,'email'=>$email,'username'=>$username,'password'=>$password,'gender'=>$gender,'dob'=>$dob];
 
-						$myfile = fopen('../Model/emp.txt', 'a');
-						$myuser = $username."|".$password."|".$email."\r\n";
-						fwrite($myfile, $myuser);
-						fclose($myfile);
+							$status = addEmp($user);
+
+
+				 if($status){
+				 	header('location: ../View/Login.php');
+				 }
+				else{
+					echo "Error";
+				}
 						
 
 						header('location: ../View/Login.php');

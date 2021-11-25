@@ -1,5 +1,6 @@
 <?php 
 	session_start();
+	require_once('../Model/signupModel.php');
 
 	if(isset($_POST['submit'])){
 
@@ -9,20 +10,16 @@
 		if($username != ""){
 			if($password != ""){
 				
-				$myfile = fopen('../Model/emp.txt', 'r');
-			
-				while(!feof($myfile)){
-					
-					$data = fgets($myfile);
-					$user = explode('|', $data);		
-					
-					if($username == trim($user[0]) && $password == trim($user[1])){
+				$status = validate($username , $password);
+
+				if($status){
 						setcookie('flag', 'true', time()+3600, '/');
 						header('location: ../View/Home.php');
 					}
-				}
-				
-				echo "invalid username or password";
+					else{
+						header('location: ../View/Login.php');
+					}
+
 
 			}else{
 				echo "Invalid password";
