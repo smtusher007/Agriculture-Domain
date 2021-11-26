@@ -4,7 +4,7 @@
 </head>
 <body>
 	<div style="background-image: url('../Asset/img1.jpg');">
-	<form method="post" action="Home.php">
+	<form method="post" action="../Controller/LoginCheck.php">
 		<fieldset>
 			<legend>LogIn</legend>
 			<table>
@@ -22,7 +22,7 @@
 				<tr>
 					<td></td>
 					<td><input type="submit" name="submit" value="Submit"></td>
-					<td><a href ="ForgetPassword.php">Forget Password</a></td>
+					<td><a href ="../Controller/ForgetPassword.php">Forget Password</a></td>
 				</tr>
 				<tr>
 					<td><a href ="Registration.php">Registration</a></td>

@@ -30,7 +30,6 @@
 				}
 						
 
-						header('location: ../View/Login.php');
 					}else{
 						echo "Invalid email";
 					}

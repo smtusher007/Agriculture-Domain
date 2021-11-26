@@ -45,169 +45,21 @@
 			</h3>
 			</td>
 			<td>
-				<table border="1" align="center" width="80%" height="300px">
-					<tr>
-						<td>
-							<h3 align="center">Name</h3>
-						</td>
-						<td>
-							<h3 align="center">NID</h3>
-						</td>
-						<td>
-							<h3 align="center">Email</h3>
-						</td>
-						<td>
-							<h3 align="center">Phone No.</h3>
-						</td>
-						<td>
-							<h3 align="center">Adress</h3>
-						</td>
-						<td>
-							<h3 align="center">Photo</h3>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Abdul Latif
-						</td>
-						<td>
-							63527352690
-						</td>
-						<td>
-							latif@gamil.com
-						</td>
-						<td>
-							+8801782482761
-						</td>
-						<td>
-							20/2 Kumarkhali,Rangpur
-						</td>
-						<td>
-							<center><img src="../Asset/AbdulLatif.jpg" width="100px" height="100px"></center>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Kamrul Hasan
-						</td>
-						<td>
-							80321345128
-						</td>
-						<td>
-							kamrul@yahoo.com
-						</td>
-						<td>
-							+8801982582868
-						</td>
-						<td>
-							34/8 Rampura, Dhaka
-						</td>
-						<td>
-							<center><img src="../Asset/KamrulHasan.jfif" width="100px" height="100px"></center>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jahangir Alam
-						</td>
-						<td>
-							44731576187
-						</td>
-						<td>
-							jahangir@yahoo.com
-						</td>
-						<td>
-							+8801832372559
-						</td>
-						<td>
-							2no. House, 37 no. Road, Hasanbag, Rajshahi
-						</td>
-						<td>
-							<center><img src="../Asset/JahangirAlam.jpg" width="100px" height="100px"></center>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Halimullah
-						</td>
-						<td>
-							56821675127
-						</td>
-						<td>
-							halim54@yahoo.com
-						</td>
-						<td>
-							+8801546673988
-						</td>
-						<td>
-							Kamarbari, Mongla, Khulna
-						</td>
-						<td>
-							<center><img src="../Asset/Halimullah.png" width="100px" height="100px"></center>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Chan Mia
-						</td>
-						<td>
-							32461772931
-						</td>
-						<td>
-							chanmia556@gmail.com
-						</td>
-						<td>
-							+8801985633556
-						</td>
-						<td>
-							Uttarkandi, Jhalokathi, Barisal
-						</td>
-						<td>
-							<center><img src="../Asset/ChanMia.jpg" width="100px" height="100px"></center>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jahan Muhammah
-						</td>
-						<td>
-							54471973920
-						</td>
-						<td>
-							chanmia556@gmail.com
-						</td>
-						<td>
-							+8801985633556
-						</td>
-						<td>
-							New Kakrail Road, Dhaka
-						</td>
-						<td>
-							<center><img src="../Asset/JahanMuhammah.jpg" width="100px" height="100px"></center>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Taranath Kumar
-						</td>
-						<td>
-							83173413450
-						</td>
-						<td>
-							taranathkumar@yahoo.com
-						</td>
-						<td>
-							+8801632218918
-						</td>
-						<td>
-							North Asad Gate, Mohammadpur, Dhaka
-						</td>
-						<td>
-							<center><img src="../Asset/TaranathKumar.jfif" width="100px" height="100px"></center>
-						</td>
-					</tr>
-					
-				</table>
+				<h3>Add Customer:</h3>
+				<form method="post" action="../Controller/customer.php">
+					Name:
+					<input type="text" name="CsName" placeholder="Type Full Name">
+					NID:
+					<input type="text" name="CsId" placeholder="Type NID Number">
+					Email:
+					<input type="email" name="CsEmail" placeholder="Type valid email">
+					PhoneNo:
+					<input type="text" name="CsPhone" placeholder="Type PhoneNo">
+					Address:
+					<input type="text" name="CsAddress" placeholder="Type Adress">
+					<input type="submit" name="submit" value="Submit">
+
+				</form>
 			</td>
 		</tr>
 	</table>

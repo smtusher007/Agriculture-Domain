@@ -45,168 +45,21 @@
 			</h3>
 			</td>
 			<td>
-				<table border="1" align="center" width="80%" height="300px">
-					<tr>
-						<td>
-							<h3 align="center">Name</h3>
-						</td>
-						<td>
-							<h3 align="center">NID</h3>
-						</td>
-						<td>
-							<h3 align="center">Email</h3>
-						</td>
-						<td>
-							<h3 align="center">Phone No.</h3>
-						</td>
-						<td>
-							<h3 align="center">Adress</h3>
-						</td>
-						<td>
-							<h3 align="center">Photo</h3>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hasan Sheikh
-						</td>
-						<td>
-							54728905432
-						</td>
-						<td>
-							hasanshk1@gamil.com
-						</td>
-						<td>
-							+8801962382845
-						</td>
-						<td>
-							house #1468, road #146, Dhanmondi ,Dhaka
-						</td>
-						<td>
-							<img src="../Asset/HasanSheikh.jpg" width="100px" height="100px">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hussain Mohammah
-						</td>
-						<td>
-							43218853412
-						</td>
-						<td>
-							hussain23@yahoo.com
-						</td>
-						<td>
-							+8801735375556
-						</td>
-						<td>
-							Nizam road, Chittagong, 4000
-						</td>
-						<td>
-							<img src="../Asset/HussainMohammah.png" width="100px" height="100px">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Kader Hamid
-						</td>
-						<td>
-							52813173585
-						</td>
-						<td>
-							kaderhamid@yahoo.com
-						</td>
-						<td>
-							+8801346878576
-						</td>
-						<td>
-							Free school street, Kathalbagan, Dhanmondi, 1205
-						</td>
-						<td>
-							<img src="../Asset/KaderHamid.jpg" width="100px" height="100px">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Kalam Jufiker
-						</td>
-						<td>
-							67843143594
-						</td>
-						<td>
-							kalamjulfiker@gmail.com
-						</td>
-						<td>
-							+8801886973583
-						</td>
-						<td>
-							Lutfan Tower, Middle badda, badda, 1212
-						</td>
-						<td>
-							<img src="../Asset/KalamJufiker.jpg" width="100px" height="100px">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Badsha Ali Sheikh
-						</td>
-						<td>
-							97593193539
-						</td>
-						<td>
-							badsha56@yahoo.com
-						</td>
-						<td>
-							+8801589954763
-						</td>
-						<td>
-							11, Ulon, West Rampura, 1219
-						</td>
-						<td>
-							<img src="../Asset/BadshaAliSheikh.jpg" width="100px" height="100px">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Idris Sarker
-						</td>
-						<td>
-							27412192572
-						</td>
-						<td>
-							idrissarker@gmail.com
-						</td>
-						<td>
-							+8801798863851
-						</td>
-						<td>
-							Stadium market, Sylhet, Sylhet, 3100
-						</td>
-						<td>
-							<img src="../Asset/IdrisSarker.jfif" width="100px" height="100px">
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jakir Hossain
-						</td>
-						<td>
-							57315152561
-						</td>
-						<td>
-							jakirhossain@gmail.com
-						</td>
-						<td>
-							+8801336567841
-						</td>
-						<td>
-							Pirjabad, Rangpur, 5400
-						</td>
-						<td>
-							<img src="../Asset/JakirHossain.jpg" width="100px" height="100px">
-						</td>
-					</tr>
-				</table>
+				<h3>Add Seller:</h3>
+				<form method="post" action="../Controller/seller.php">
+					Name:
+					<input type="text" name="SsName" placeholder="Type Full Name">
+					NID:
+					<input type="text" name="SsId" placeholder="Type NID Number">
+					Email:
+					<input type="email" name="SsEmail" placeholder="Type valid email">
+					PhoneNo:
+					<input type="text" name="SsPhone" placeholder="Type PhoneNo">
+					Address:
+					<input type="text" name="SsAddress" placeholder="Type Adress">
+					<input type="submit" name="submit" value="Submit">
+
+				</form>
 			</td>
 		</tr>
 	</table>
