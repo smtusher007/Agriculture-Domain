@@ -1,19 +1,34 @@
 <html>
 <head>
 	<title>Login</title>
-	<link rel="stylesheet" type="text/css" href="../Model/LoginStyle.css">
 </head>
 <body>
-	
-	<form class="box" method="post" action="../Controller/LoginCheck.php">
-		
-		<h1>Login</h1>
-		<input type="text" name="username" placeholder="Username">
-		<input type="password" name="password" placeholder="Password">
-		<input type="submit" name="submit" value="Login">
-		<h4 align="left"><a href="Registration.php">Registration</a></h4>
-		<h4 align="right"><a href="../Controller/ForgetPassword.php">Forget Password</a></h4>
-
+	<div style="background-image: url('../Asset/img1.jpg');">
+	<form method="post" action="Home.php">
+		<fieldset>
+			<legend>LogIn</legend>
+			<table>
+				<tr>
+					<td>Username:</td>
+					<td><input type="text" name="username" value=""></td>
+				</tr>
+				<tr>
+					<td>Password:</td>
+					<td><input type="password" name="password" value=""></td>
+				</tr>
+				<tr>
+					<td><input type="checkbox" name="remember" value="">Remember Me</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><a href ="ForgetPassword.php">Forget Password</a></td>
+				</tr>
+				<tr>
+					<td><a href ="Registration.php">Registration</a></td>
+				</tr>
+			</table>
+		</fieldset>
 	</form>
 </body>
 </html>
