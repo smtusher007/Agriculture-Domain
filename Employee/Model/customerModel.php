@@ -14,5 +14,14 @@
 				}
 
 	}
+	function AllCustomers(){
+		$con = getConnection();
+		$sql = "select id,name,nid,email,phoneNo,address from customerinfo";
+		$result = mysqli_query($con , $sql);
+		return $result;
+			
+
+
+	}
 
 ?>

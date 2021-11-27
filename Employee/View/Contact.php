@@ -1,6 +1,14 @@
 <?php
 
-	include_once('../Controller/Header.php');
+	include('../Controller/Header.php');
+	require('../Model/contactModel.php');
+	$result1 = showCsContact();
+	$count1 = mysqli_num_rows($result1);
+	
+
+	$result2 = showSsContact();
+	$count2 = mysqli_num_rows($result2);
+
 ?>
 <html>
 <head>
@@ -45,203 +53,39 @@
 			</h3>
 			</td>
 			<td>
-				<table border="1" align="center" width="80%" height="300px">
-					<tr>
-						<td>
-							<h3 align="center">Name</h3>
-						</td>
-						<td>
-							<h3 align="center">Type</h3>
-						</td>
-						<td>
-							<h3 align="center">Email</h3>
-						</td>
-						<td>
-							<h3 align="center">Phone No.</h3>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Abdul Latif 
-						</td>
-						<td>
-							Customer
-						</td>
-						<td>
-							latif@gamil.com
-						</td>
-						<td>
-							+8801782482761
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Kamrul Hasan
-						</td>
-						<td>
-							Customer
-						</td>
-						<td>
-							kamrul@yahoo.com
-						</td>
-						<td>
-							+8801982582868
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hasan Sheikh
-						</td>
-						<td>
-							Seller
-						</td>
-						<td>
-							hasanshk1@gamil.com
-						</td>
-						<td>
-							+8801962382845
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jahangir Alam
-						</td>
-						<td>
-							Customer
-						</td>
-						<td>
-							jahangir@yahoo.com
-						</td>
-						<td>
-							+8801832372559
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Hussain Mohammah
-						</td>
-						<td>
-							Seller
-						</td>
-						<td>
-							hussain23@yahoo.com
-						</td>
-						<td>
-							+8801735375556
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Kader Hamid
-						</td>
-						<td>
-							Seller
-						</td>
-						<td>
-							kaderhamid@yahoo.com
-						</td>
-						<td>
-							+8801346878576
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Halimullah
-						</td>
-						<td>
-							Customer
-						</td>
-						<td>
-							halim54@yahoo.com
-						</td>
-						<td>
-							+8801546673988
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Kalam Jufiker
-						</td>
-						<td>
-							Seller
-						</td>
-						<td>
-							kalamjulfiker@gmail.com
-						</td>
-						<td>
-							+8801886973583
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Chan Mia
-						</td>
-						<td>
-							Customer
-						</td>
-						<td>
-							chanmia556@gmail.com
-						</td>
-						<td>
-							+8801985633556
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jahan Muhammah
-						</td>
-						<td>
-							Customer
-						</td>
-						<td>
-							jahan004@gmail.com
-						</td>
-						<td>
-							+8801758963778
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Badsha Ali Sheikh
-						</td>
-						<td>
-							Seller
-						</td>
-						<td>
-							badsha56@yahoo.com
-						</td>
-						<td>
-							+8801589954763
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Idris Sarker
-						</td>
-						<td>
-							Seller
-						</td>
-						<td>
-							idrissarker@gmail.com
-						</td>
-						<td>
-							+8801798863851
-						</td>
-					</tr>
-					<tr>
-						<td>
-							Jakir Hossain
-						</td>
-						<td>
-							Seller
-						</td>
-						<td>
-							jakirhossain@gmail.com
-						</td>
-						<td>
-							+8801336567841
-						</td>
-					</tr>
+				<h2 align="center">Customer</h2>
+					<table border="1" align="center">
+						<tr>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Email</th>
+							<th>Phone No.</th>
+						</tr>
+						<?php while($data1 = mysqli_fetch_assoc($result1)){?>
+						<tr>
+							<td><?=$data1['name']?></td>
+							<td><?=$data1['type']?></td>
+							<td><?=$data1['email']?></td>
+							<td><?=$data1['phoneNo']?></td>
+						</tr>
+						<?php } ?>
+				</table>
+				<h2 align="center">Seller</h2>
+					<table border="1" align="center">
+						<tr>
+							<th>Name</th>
+							<th>Type</th>
+							<th>Email</th>
+							<th>Phone No.</th>
+						</tr>
+						<?php while($data2 = mysqli_fetch_assoc($result2)){?>
+						<tr>
+							<td><?=$data2['name']?></td>
+							<td><?=$data2['type']?></td>
+							<td><?=$data2['email']?></td>
+							<td><?=$data2['phoneNo']?></td>
+						</tr>
+						<?php } ?>
 				</table>
 			</td>
 		</tr>

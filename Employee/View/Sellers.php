@@ -1,6 +1,9 @@
 <?php
 
 	include_once('../Controller/Header.php');
+	require_once('../Model/sellerModel.php');
+	$result = AllSeller();
+	$count = mysqli_num_rows($result);
 ?>
 <html>
 <head>
@@ -60,6 +63,31 @@
 					<input type="submit" name="submit" value="Submit">
 
 				</form>
+				<table border="1" align="center">
+						<tr>
+							<th>ID</th>
+							<th>Name</th>
+							<th>NID</th>
+							<th>Email</th>
+							<th>Phone No.</th>
+							<th>Address</th>
+							<th>Action</th>
+						</tr>
+<?php while($data = mysqli_fetch_assoc($result)){?>
+						<tr>
+							<td><?=$data['id']?></td>
+							<td><?=$data['name']?></td>
+							<td><?=$data['nid']?></td>
+							<td><?=$data['email']?></td>
+							<td><?=$data['phoneNo']?></td>
+							<td><?=$data['address']?></td>
+							<td>
+								<a href="edit.php">Edit</a>
+								<a href="delete.php">Delete</a>
+							</td>
+						</tr>
+<?php } ?>
+				</table>
 			</td>
 		</tr>
 	</table>
