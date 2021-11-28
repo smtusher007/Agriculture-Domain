@@ -51,20 +51,40 @@
 			</td>
 			<td>
 				<h3>Add Customer:</h3>
-				<form method="post" action="../Controller/customer.php">
+				<script type="text/javascript">
+					function validate()
+					{
+ 						let Csname = document.getElementById( "CsName" );
+ 						let CsId = document.getElementById("CsId");
+ 						let CsEmail = document.getElementById("CsEmail");
+ 						let CsPhone = document.getElementById("CsPhone");
+ 						let CsAddress = document.getElementById("CsAddress");
+ 						if( Csname.value == "" || CsId.value=="" || CsEmail.value=="" ||CsPhone.value=="" ||CsAddress.value=="")
+ 						{
+  						alert("Please fill the empty field");
+  						return false;
+						 }
+						 else{
+						 	return true;
+						 }
+
+					}
+				</script>
+				<form method="post" name="AddCustomer" onsubmit="return validate();" action="../Controller/customer.php">
 					Name:
-					<input type="text" name="CsName" placeholder="Type Full Name">
+					<input type="text" id="CsName" name="CsName" placeholder="Type Full Name" >
 					NID:
-					<input type="text" name="CsId" placeholder="Type NID Number">
+					<input type="text" id="CsId" name="CsId" placeholder="Type NID Number">
 					Email:
-					<input type="email" name="CsEmail" placeholder="Type valid email">
+					<input type="email" id="CsEmail" name="CsEmail" placeholder="Type valid email">
 					PhoneNo:
-					<input type="text" name="CsPhone" placeholder="Type PhoneNo">
+					<input type="text" id="CsPhone" name="CsPhone" placeholder="Type PhoneNo">
 					Address:
-					<input type="text" name="CsAddress" placeholder="Type Adress">
+					<input type="text" id="CsAddress" name="CsAddress" placeholder="Type Adress">
 					<input type="submit" name="submit" value="Submit">
 
 				</form>
+
 
 				<table border="1" align="center">
 						<tr>

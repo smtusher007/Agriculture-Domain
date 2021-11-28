@@ -50,17 +50,36 @@
 			
 			<td>
 				<h3 align="center">List some Order:<br>
-				<form method="post" action="../Controller/order.php">
+					<script type="text/javascript">
+					function validate()
+					{
+ 						let CuName = document.getElementById( "CuName" );
+ 						let SeName = document.getElementById("SeName");
+ 						let Item = document.getElementById("Item");
+ 						let Quantity = document.getElementById("Quantity");
+ 						let Price = document.getElementById("Price");
+ 						if( CuName.value == "" || SeName.value=="" || Item.value=="" ||Quantity.value=="" ||Price.value=="")
+ 						{
+  						alert("Please fill the empty field");
+  						return false;
+						 }
+						 else{
+						 	return true;
+						 }
+
+					}
+				</script>
+				<form method="post" onsubmit="return validate();" action="../Controller/order.php">
 					Customer Name:
-					<input type="text" name="CuName" placeholder="Type Full Name"><br>
+					<input type="text" id="CuName" name="CuName" placeholder="Type Full Name"><br>
 					Seller Name:
-					<input type="text" name="SeName" placeholder="Type Full Name"><br>
+					<input type="text" id="SeName" name="SeName" placeholder="Type Full Name"><br>
 					Order Item:
-					<input type="text" name="Item" placeholder="Type Item"><br>
+					<input type="text" id="Item" name="Item" placeholder="Type Item"><br>
 					Quantity:
-					<input type="text" name="Quantity" placeholder="Type ordered Quantity"><br>
+					<input type="text" id="Quantity" name="Quantity" placeholder="Type ordered Quantity"><br>
 					Price:
-					<input type="text" name="Price" placeholder="Type price"><br>
+					<input type="text" id="Price" name="Price" placeholder="Type price"><br>
 					<input type="submit" name="submit" value="Enter"></h3>
 
 				</form>

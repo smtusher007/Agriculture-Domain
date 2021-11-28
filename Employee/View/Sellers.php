@@ -49,17 +49,36 @@
 			</td>
 			<td>
 				<h3>Add Seller:</h3>
-				<form method="post" action="../Controller/seller.php">
+					<script type="text/javascript">
+					function validate()
+					{
+ 						let Ssname = document.getElementById( "SsName" );
+ 						let SsId = document.getElementById("SsId");
+ 						let SsEmail = document.getElementById("SsEmail");
+ 						let SsPhone = document.getElementById("SsPhone");
+ 						let SsAddress = document.getElementById("SsAddress");
+ 						if( Ssname.value == "" || SsId.value=="" || SsEmail.value=="" ||SsPhone.value=="" ||SsAddress.value=="")
+ 						{
+  						alert("Please fill the empty field");
+  						return false;
+						 }
+						 else{
+						 	return true;
+						 }
+
+					}
+				</script>
+				<form method="post" onsubmit="return validate();" action="../Controller/seller.php">
 					Name:
-					<input type="text" name="SsName" placeholder="Type Full Name">
+					<input type="text" id="SsName" name="SsName" placeholder="Type Full Name">
 					NID:
-					<input type="text" name="SsId" placeholder="Type NID Number">
+					<input type="text" id="SsId" name="SsId" placeholder="Type NID Number">
 					Email:
-					<input type="email" name="SsEmail" placeholder="Type valid email">
+					<input type="email" id="SsEmail" name="SsEmail" placeholder="Type valid email">
 					PhoneNo:
-					<input type="text" name="SsPhone" placeholder="Type PhoneNo">
+					<input type="text"  id="SsPhone" name="SsPhone" placeholder="Type PhoneNo">
 					Address:
-					<input type="text" name="SsAddress" placeholder="Type Adress">
+					<input type="text" id="SsAddress" name="SsAddress" placeholder="Type Adress">
 					<input type="submit" name="submit" value="Submit">
 
 				</form>
