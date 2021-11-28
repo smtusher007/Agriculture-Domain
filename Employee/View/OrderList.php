@@ -83,8 +83,8 @@
 							<td><?=$data['quantity']?></td>
 							<td><?=$data['price']?></td>
 							<td>
-								<a href="edit.php">Edit</a>
-								<a href="delete.php">Delete</a>
+								<a href="../Controller/editOrder.php?id=<?=$data['id']?>">Edit</a>
+								<a href="../Controller/deleteOrder.php?id=<?=$data['id']?>">Delete</a>
 							</td>
 						</tr>
 <?php } ?>

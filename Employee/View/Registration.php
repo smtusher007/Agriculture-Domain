@@ -42,8 +42,9 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" name="submit" value="Submit"></td>
-					<td><input type="reset" name="reset" value="Reset"></td>
+					<td><input type="submit" name="submit" value="Register"></td>
+					<td><input type="reset" name="reset" value="Reset">
+						<br><a href="Login.php">Login here</a></td>
 				</tr>
 			</table>
 		</fieldset>

@@ -21,7 +21,7 @@
 				</tr>
 				<tr>
 					<td></td>
-					<td><input type="submit" name="submit" value="Submit"></td>
+					<td><input type="submit" name="submit" value="Login"></td>
 					<td><a href ="../Controller/ForgetPassword.php">Forget Password</a></td>
 				</tr>
 				<tr>
