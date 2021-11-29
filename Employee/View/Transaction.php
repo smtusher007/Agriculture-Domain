@@ -44,119 +44,35 @@
 				<a href="News.php">News</a>
 			</h3>
 			</td>
-			<td>
-				<table border="1" align="center" width="80%" height="300px">
-					<tr>
-						<td>
-							<h3 align="center">Order ID</h2>
-						</td>
-						<td>
-							<h3 align="center">Price</h2>
-						</td>
-						<td>
-							<h3 align="center">Status</h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21353
-						</td>
-						<td>
-							200tk
-						</td>
-						<td>
-							Paid
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21365
-						</td>
-						<td>
-							300Tk
-						</td>
-						<td>
-							Paid
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21367
-						</td>
-						<td>
-							50Tk
-						</td>
-						<td>
-							Paid
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21368
-						</td>
-						<td>
-							200Tk
-						</td>
-						<td>
-							Pending
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21371
-						</td>
-						<td>
-							400Tk
-						</td>
-						<td>
-							Pending
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21441
-						</td>
-						<td>
-							400Tk
-						</td>
-						<td>
-							Paid
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21462
-						</td>
-						<td>
-							50Tk
-						</td>
-						<td>
-							Paid
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21488
-						</td>
-						<td>
-							300Tk
-						</td>
-						<td>
-							Paid
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21521
-						</td>
-						<td>
-							5,000tk
-						</td>
-						<td>
-							Pending
-						</td>
-					</tr>
-				</table>
+			<td><center>
+				<h3>Add Transaction Status:</h3>
+				<script type="text/javascript">
+					function validate()
+					{
+ 						let oId = document.getElementById("oId");
+ 						let status = document.getElementById( "status" );
+ 						if(oId.value == "" || status.value == "")
+ 						{
+  						alert("Please fill the empty field");
+  						return false;
+						 }
+						 else{
+						 	return true;
+						 }
+
+					}
+				</script>
+				<form method="post" name="TransactionStatus" onsubmit="return validate();" action="../Controller/transaction.php">
+					<h3>Order ID:
+					<input type="text" id="oId" name="oId" placeholder="Type Order ID" ><br>
+					Status:
+					<input type="radio" id="status" name="status" value="paid">PAID
+					<input type="radio" id="status" name="status" value="pending">PENDING
+					<input type="submit" name="submit" value="Submit">
+				</h3>
+
+				</form>
+				</center>
 			</td>
 		</tr>
 	</table>

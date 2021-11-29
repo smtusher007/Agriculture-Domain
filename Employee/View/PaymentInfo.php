@@ -45,127 +45,35 @@
 			</h3>
 			</td>
 			<td>
-				<table border="1" align="center" width="80%" height="300px">
-					<tr>
-						<td>
-							<h3 align="center">Order ID</h2>
-						</td>
-						<td>
-							<h3 align="center">Status</h2>
-						</td>
-						<td>
-							<h3 align="center">Payment Method</h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							AG21353
-						</td>
-						<td>
-							Paid
-						</td>
-						<td>
-							Online Banking
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							AG21365
-						</td>
-						<td>
-							Paid
-						</td>
-						<td>
-							Mobile Banking
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							AG21367
-						</td>
-						<td>
-							Paid
-						</td>
-						<td>
-							Mobile Banking
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							AG21368
-						</td>
-						<td>
-							Pending
-						</td>
-						<td>
-							Mobile Banking
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							AG21371
-						</td>
-						<td>
-							Pending
-						</td>
-						<td>
-							Online Banking
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							AG21441
-						</td>
-						<td>
-							Paid
-						</td>
-						<td>
-							Mobile Banking
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							AG21462
-						</td>
-						<td>
-							Paid
-						</td>
-						<td>
-							Online Banking
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							AG21488
-						</td>
-						<td>
-							Paid
-						</td>
-						<td>
-							Mobile Banking
-						</td>
-						
-					</tr>
-					<tr>
-						<td>
-							AG21521
-						</td>
-						<td>
-							Pending
-						</td>
-						<td>
-							Online Banking
-						</td>
-						
-					</tr>
-				</table>
+				<center>
+				<h3>Payment Methods for orders:</h3>
+				<script type="text/javascript">
+					function validate()
+					{
+ 						let oId = document.getElementById("oId");
+ 						let method = document.getElementById( "method" );
+ 						if(oId.value == "" || method.value == "")
+ 						{
+  						alert("Please fill the empty field");
+  						return false;
+						 }
+						 else{
+						 	return true;
+						 }
+
+					}
+				</script>
+				<form method="post" name="TransactionStatus" onsubmit="return validate();" action="../Controller/paymentMethod.php">
+					<h3>Order ID:
+					<input type="text" id="oId" name="oId" placeholder="Type Order ID" ><br>
+					Method:
+					<input type="radio" id="method" name="method" value="mobile banking">MOBILE BANKING
+					<input type="radio" id="method" name="method" value="online banking">ONLINE BANKING
+					<input type="submit" name="submit" value="Submit">
+				</h3>
+
+				</form>
+				</center>
 			</td>
 		</tr>
 	</table>

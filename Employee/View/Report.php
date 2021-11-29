@@ -46,24 +46,29 @@
 			</td>
 			<td>
 				<center>
-					<form method="POST" action="">
-  				<h2>Type your issue over here:<br>
-  				<input type="text" name="inputfield"  style=" height: 300px; width:500px;"><br><br>
+					<h3 align="center">Report:<br>
+					<script type="text/javascript">
+					function validate()
+					{
+ 						let report = document.getElementById("report");
+ 						if( report.value == "" )
+ 						{
+  						alert("Please fill the empty field");
+  						return false;
+						 }
+						 else{
+						 	return true;
+						 }
 
-   				<input type="submit" value="Submit" style=" height: 50px; width:100px;"></h2>
-  				</form>
+					}
+				</script>
+				<form method="post" onsubmit="return validate();" action="../Controller/reportCollect.php">
+					<input style="height:100px; width: 500px" type="text" id="report" name="report" placeholder="Type report"><br>
+					<input type="submit" name="submit" value="Submit"></h3>
+
+				</form>
   			</center>
-				<?php
-              
-					if(isset($_POST['inputfield']))
-				{
-					$data=$_POST['inputfield'];
-					$fp = fopen('../Model/data.txt', 'a');
-					fwrite($fp, $data);
-					fclose($fp);
-					(isset($_POST['inputfield'])) ? "value = ".$_POST["inputfield"] : "value = \"\""; 
-				}
-				?>
+			
 			</td>
 		</tr>
 	</table>

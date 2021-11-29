@@ -45,100 +45,34 @@
 			</h3>
 			</td>
 			<td>
-				<table border="1" align="center" width="80%" height="300px">
-				<tr>
-					<td>
-						Item Name
-					</td>
-					
-					<td>
-						Seller's Name
-					</td>
-					<td width="40%">
-						Item Information
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Papaya Seeds
-					</td>
-					<td>
-						Idris Sarker
-					</td>
-					<td>
-						These tiny round seeds are actually edible and are good for our health if consumed in a limited quantity.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Mini sprayer
-					</td>
-					<td>
-						Jakir Hossain
-					</td>
-					<td>
-						What is a sprayer used for?
-						Sprayers are commonly used for the administration of water and water/chemical solutions, often fertilizers, pesticides, and herbicides
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Harvesting Implement
-					</td>
-					<td>
-						Hasan Mahmud
-					</td>
-					<td>
-						The most common type of harvesting implement are small sickle, big sickle, darat, gandasa and small axe etc
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Planting machines.
-					</td>
-					<td>
-						Khan Bahadur
-					</td>
-					<td>
-						A mechanical planter can be used to plant as many seedlings as 10 hand planters. Planting rates as high as 5,000 trees per hour have been reported at well-prepared sites.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Soil cultivation implements
-					</td>
-					<td>
-						Kader Hamid
-					</td>
-					<td>
-						Soil cultivation implements: used to plow the soil and prepare it for cultivation.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Forage harvester
-					</td>
-					<td>
-						Khan Bahadur
-					</td>
-					<td>
-						A type of harvester that picks up displaced or cut foliage and plant material. Grader: to level soils or grade levels.
-					</td>
-				</tr>
-				<tr>
-					<td>
-						Harrow
-					</td>
-					<td>
-						Harun-ar-rashid
-					</td>
-					<td>
-						Buries seeds and refines soil bed. Harvester: shears and picks crops; tractor-towed harvesters are typically only for small-acreage harvesting.
-					</td>
-				</tr>
+				<h3>Add Items:</h3>
+				<script type="text/javascript">
+					function validate()
+					{
+ 						let iName = document.getElementById( "iName" );
+ 						let sName = document.getElementById("sName");
+ 						let iInfo = document.getElementById("iInfo");
+ 						if( iName.value == "" || sName.value=="" || CsEmail.value=="")
+ 						{
+  						alert("Please fill the empty field");
+  						return false;
+						 }
+						 else{
+						 	return true;
+						 }
 
+					}
+				</script>
+				<form method="post" onsubmit="return validate();" action="../Controller/itemList.php">
+					Item Name:
+					<input type="text" id="iName" name="iName" placeholder="Type a Item Name" >
+					Seller's Name:
+					<input type="text" id="sName" name="sName" placeholder="Type Seller's Name">
+					Item Information:
+					<input type="text" id="iInfo" name="iInfo" placeholder="Type Item Info">
+					<input type="submit" name="submit" value="Add">
 
-				</table>
+				</form>
 			</td>
 		</tr>
 	</table>

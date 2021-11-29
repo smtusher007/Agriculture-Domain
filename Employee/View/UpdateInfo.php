@@ -45,19 +45,27 @@
 			</h3>
 			</td>
 			<td>
-				<h2 align="left">
-				<?php
-					$file = fopen("../Asset/InformationUpdate.txt","r");
+				<h3>Add Information:</h3>
+				<script type="text/javascript">
+					function validate()
+					{
+ 						let info = document.getElementById("info");
+ 						if(info.value == "")
+ 						{
+  						alert("Please fill the empty field");
+  						return false;
+						 }
+						 else{
+						 	return true;
+						 }
 
-					while(! feof($file))
-  					{
-  					echo fgets($file). "<br />";
-  					}
+					}
+				</script>
+				<form method="post" name="TransactionStatus" onsubmit="return validate();" action="../Controller/transaction.php">
 
- 					fclose($file);
-					?>
+					<input type="text" id="info" name="info" placeholder="write some Agricultural Informations" style="height:50px;width: 250px;" ><br>
 
-				</h2>
+				</form>
 				<img src="../Asset/Info1.jpg" height="300px" width="550px">
 				<img src="../Asset/Info2.jpg" height="300px" width="550px">
 				<img src="../Asset/Info3.png" height="300px" width="550px">
