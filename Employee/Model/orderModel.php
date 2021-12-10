@@ -30,14 +30,24 @@ function getOrderById($id){
 		$data = mysqli_fetch_assoc($result); 
 		return $data;
 }
-function editOrderList($orders){
+function editOrderList($ordersL){
 	$con = getConnection();
-	$sql = "update orderlist set customerName='{$orders['customerName']}' , sellerName='{$orders['sellerName']}' ,orderedItem= '{$orders['orderedItem']}' , quantity='{$orders['quantity']}' , price='{$orders['price']}' where id={$orders['id']}}";
+	$sql = "update orderlist set customerName='{$ordersL['customerName']}' , sellerName='{$ordersL['sellerName']}' ,orderedItem= '{$ordersL['orderedItem']}' , quantity='{$ordersL['quantity']}' , price='{$ordersL['price']}' where id='{$ordersL['id']}'";
 	if(mysqli_query($con, $sql)){
 			return true;
 		}else{
 			return false;
 		}
+}
+function deleteOrder($id){
+	$con = getConnection();
+	$sql = "delete from orderlist where id={$id}";
+	if(mysqli_query($con, $sql)){
+		return true;
+	}else{
+		return false;
+	}
+
 }
 
 

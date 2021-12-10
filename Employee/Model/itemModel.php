@@ -22,4 +22,15 @@ function ListedItem(){
 			
 
 	}
+	function dltItem($id){
+
+	$con = getConnection();
+	$sql = "delete from listeditem where id={$id}";
+	if(mysqli_query($con, $sql)){
+		return true;
+	}else{
+		return false;
+	}
+  }
+
 ?>

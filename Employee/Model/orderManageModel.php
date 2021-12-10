@@ -23,4 +23,18 @@ function manageOrder(){
 
 
 	}
+function dltOrder($id){
+
+	$con = getConnection();
+	$sql = "update orderlist set dDate=NULL, address=NULL where id={$id}";
+	if(mysqli_query($con, $sql)){
+		return true;
+	}else{
+		return false;
+	}
+
+
+}
+
+
 ?>

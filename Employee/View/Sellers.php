@@ -101,8 +101,8 @@
 							<td><?=$data['phoneNo']?></td>
 							<td><?=$data['address']?></td>
 							<td>
-								<a href="edit.php">Edit</a>
-								<a href="delete.php">Delete</a>
+								<a href="../Controller/editSeller.php?id=<?=$data['id']?>">Edit</a>
+								<a href="../Controller/deleteSeller.php?id=<?=$data['id']?>" onclick="return confirm('Are you sure?')" >Delete</a>
 							</td>
 						</tr>
 <?php } ?>

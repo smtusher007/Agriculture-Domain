@@ -77,7 +77,7 @@
 					Order Item:
 					<input type="text" id="Item" name="Item" placeholder="Type Item"><br>
 					Quantity:
-					<input type="text" id="QuQuantityantity" name="Quantity" placeholder="Type ordered Quantity"><br>
+					<input type="text" id="Quantity" name="Quantity" placeholder="Type ordered Quantity"><br>
 					Price:
 					<input type="text" id="Price" name="Price" placeholder="Type price"><br>
 					<input type="submit" name="submit" value="Enter"></h3>
@@ -102,8 +102,8 @@
 							<td><?=$data['quantity']?></td>
 							<td><?=$data['price']?></td>
 							<td>
-								<a href="../Controller/editOrder.php?id=<?=$data['id']?>">Edit</a>
-								<a href="../Controller/deleteOrder.php?id=<?=$data['id']?>">Delete</a>
+								<a href="../Controller/editOrder.php?id=<?=$data['id']?>" >Edit</a>
+								<a href="../Controller/deleteOrder.php?id=<?=$data['id']?>" onclick="return confirm('Are you sure?')">Delete</a>
 							</td>
 						</tr>
 <?php } ?>

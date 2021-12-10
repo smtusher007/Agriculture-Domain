@@ -23,6 +23,17 @@ function AllSeller(){
 
 
 	}
+function dltSeller($id){
 
+	$con = getConnection();
+	$sql = "delete from sellerinfo where id={$id}";
+	if(mysqli_query($con, $sql)){
+		return true;
+	}else{
+		return false;
+	}
+
+
+}
 
 ?>

@@ -23,5 +23,15 @@
 
 
 	}
+	function deleteCustomer($id){
+	$con = getConnection();
+	$sql = "delete from customerinfo where id={$id}";
+	if(mysqli_query($con, $sql)){
+		return true;
+	}else{
+		return false;
+	}
+
+	}
 
 ?>

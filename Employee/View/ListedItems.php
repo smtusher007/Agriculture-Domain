@@ -90,7 +90,7 @@
 							<td><?=$data['itemInfo']?></td>
 							<td>
 								<a href="../Controller/editList.php?id=<?=$data['id']?>">Edit</a>
-								<a href="../Controller/deleteList.php?id=<?=$data['id']?>">Delete</a>
+								<a href="../Controller/deleteList.php?id=<?=$data['id']?>" onclick="return confirm('Are you sure?')">Delete</a>
 							</td>
 						</tr>
 			<?php } ?>
