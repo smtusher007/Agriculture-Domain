@@ -5,7 +5,7 @@
  
  function addOrder($order){
 		$con = getConnection();
-		$sql = "insert into orderlist values('' , '{$order['customerName']}' , '{$order['sellerName']}' , '{$order['orderedItem']}' , '{$order['quantity']}' , '{$order['price']}')";
+		$sql = "insert into orderlist values('' , '{$order['customerName']}' , '{$order['sellerName']}' , '{$order['orderedItem']}' , '{$order['quantity']}' , '{$order['price']}', '-{not assigned}-','-{not assigned}-','-{not assigned}-','-{not assigned}-')";
 				 if(mysqli_query($con , $sql)){
 				 	return true;
 				 }
@@ -16,7 +16,7 @@
 	}
 function Orderlist(){
 		$con = getConnection();
-		$sql = "select * from orderlist";
+		$sql = "select id,customerName,sellerName,orderedItem,quantity,price from orderlist";
 		$result = mysqli_query($con , $sql);
 		return $result;
 			

@@ -1,6 +1,9 @@
 <?php
 
 	include_once('../Controller/Header.php');
+	require_once('../Model/orderManageModel.php');
+	$result = manageOrder();
+	$count = mysqli_num_rows($result);
 ?>
 <html>
 <head>
@@ -52,8 +55,8 @@
  						let oID = document.getElementById( "oID" );
  						let dDate = document.getElementById("dDate");
  						let Address = document.getElementById("Address");
- 						let cName = document.getElementById("cName");
- 						if( oID.value == "" || dDate.value=="" || Address.value=="" || cName=="")
+ 						
+ 						if( oID.value == "" || dDate.value=="" || Address.value=="" || )
  						{
   						alert("Please fill the empty field");
   						return false;
@@ -71,14 +74,51 @@
 					<input type="text" id="dDate" name="dDate" placeholder="Type Delivery Date">
 					Deliver to:
 					<input type="text" id="Address" name="Address" placeholder="Type Address">
-					Customer Name:
-					<input type="text" id="cName" name="cName" placeholder="Type Full name">
+					
 					<input type="submit" name="submit" value="Add">
 
 				</form>
+				<table border="1" align="center">
+						<tr>
+							<th>ORDER ID</th>
+							<th>DElIVERY DATE</th>
+							<th>ADRESS</th>
+							<th>ACTION</th>
+						</tr>
+				<?php while($data = mysqli_fetch_assoc($result)){?>
+						<tr>
+							<td><?=$data['id']?></td>
+							<td><?=$data['dDate']?></td>
+							<td><?=$data['address']?></td>
+							<td>
+								<a href="../Controller/editOrder.php?id=<?=$data['id']?>">Edit</a>
+								<a href="../Controller/deleteOrder.php?id=<?=$data['id']?>">Delete</a>
+							</td>
+						</tr>
+				<?php } ?>
+				</table>
 			</td>
 		</tr>
 	</table>
+
+	<script type="text/javascript">
+		function ajax(){
+	let oID = document.getElementById('oID').value;
+	let dDate = document.getElementById('dDate').value;
+	let Address = document.getElementById('Address').value;
+	
+	
+
+	let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/mOrder.php', false);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('oID='+oID);
+	xhttp.send('dDate='+dDate);
+	xhttp.send('Address='+Address);
+	
+	
+}
+	</script>
 
 </body>
 </html>

@@ -1,6 +1,9 @@
 <?php
 
 	include('../Controller/Header.php');
+	require_once('../Model/transModel.php');
+	$result = payStatus();
+	$count = mysqli_num_rows($result);
 ?>
 <html>
 <head>
@@ -73,9 +76,42 @@
 
 				</form>
 				</center>
+
+				<table border="1" align="center">
+						<tr>
+							<th>ORDER ID</th>
+							<th>STATUS</th>
+						</tr>
+				<?php while($data = mysqli_fetch_assoc($result)){?>
+						<tr>
+							<td><?=$data['id']?></td>
+							<td><?=$data['status']?></td>
+						</tr>
+				<?php } ?>
+				</table>
 			</td>
 		</tr>
 	</table>
+			</td>
+		</tr>
+	</table>
+
+	<script type="text/javascript">
+		function ajax(){
+	let oId = document.getElementById('oId').value;
+	let status = document.getElementById('status').value;
+	
+
+	let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/transaction.php', false);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('oId='+oId);
+	xhttp.send('status='+status);
+	
+	
+}
+	</script>
+
 
 </body>
 </html>

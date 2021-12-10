@@ -1,6 +1,9 @@
 <?php
 
 	include('../Controller/Header.php');
+	require_once('../Model/infoModel.php');
+	$result = showInfo();
+	$count = mysqli_num_rows($result);
 ?>
 <html>
 <head>
@@ -61,11 +64,31 @@
 
 					}
 				</script>
-				<form method="post" name="TransactionStatus" onsubmit="return validate();" action="../Controller/transaction.php">
+				<form method="post" name="TransactionStatus" onsubmit="return validate();" action="../Controller/update.php">
 
 					<input type="text" id="info" name="info" placeholder="write some Agricultural Informations" style="height:50px;width: 250px;" ><br>
+					<input type="submit" name="submit" value="Insert">
+					<div id="print">
+						
+					</div>
 
 				</form>
+				<table border="1" align="center">
+						<tr>
+							<th>INFORMATION</th>
+							<th>ACTION</th>
+						</tr>
+				<?php while($data = mysqli_fetch_assoc($result)){?>
+						<tr>
+							<td><?=$data['info']?></td>
+							<td>
+								<a href="../Controller/editInfo.php=<?=$data['id']?>">Edit</a>
+								<a href="../Controller/deleteInfo.php=<?=$data['id']?>">Delete</a>
+							</td>
+						</tr>
+				<?php } ?>
+				</table>
+
 				<img src="../Asset/Info1.jpg" height="300px" width="550px">
 				<img src="../Asset/Info2.jpg" height="300px" width="550px">
 				<img src="../Asset/Info3.png" height="300px" width="550px">
@@ -73,6 +96,30 @@
 			</td>
 		</tr>
 	</table>
+	<script type="text/javascript">
+		function ajax(){
+	let info = document.getElementById('info').value;
+	
+	let json = {
+		'info'  : info,
+	}
+	let myjson = JSON.stringify(json);
+
+
+	let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/update.php', true);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('data='+myjson);
+	xhttp.onreadystatechange = function(){
+
+		if(this.readyState == 4 && this.status == 200){
+			document.getElementById('print').innerHTML = this.responseText;
+		}
+	}
+	
+	
+}
+	</script>
 
 </body>
 </html>

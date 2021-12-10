@@ -1,6 +1,9 @@
 <?php
 
 	include_once('../Controller/Header.php');
+	require_once('../Model/historyModel.php');
+	$result = showHistory();
+	$count = mysqli_num_rows($result);
 ?>
 <html>
 <head>
@@ -45,77 +48,19 @@
 			</h3>
 			</td>
 			<td>
-				<table border="1" align="center" width="80%" height="300px">
-					<tr>
-						<td>
-							<h2><?php
-								$file = fopen("../Asset/history1.txt","r");
-
-								while(! feof($file))
-  								{
-  									echo fgets($file). "<br />";
-  									}
-
- 									fclose($file);
-							?> </h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h2><?php
-								$file = fopen("../Asset/history2.txt","r");
-
-								while(! feof($file))
-  								{
-  									echo fgets($file). "<br />";
-  									}
-
- 									fclose($file);
-							?> </h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h2><?php
-								$file = fopen("../Asset/history3.txt","r");
-
-								while(! feof($file))
-  								{
-  									echo fgets($file). "<br />";
-  									}
-
- 									fclose($file);
-							?> </h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h2><?php
-								$file = fopen("../Asset/history4.txt","r");
-
-								while(! feof($file))
-  								{
-  									echo fgets($file). "<br />";
-  									}
-
- 									fclose($file);
-							?> </h2>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<h2><?php
-								$file = fopen("../Asset/history5.txt","r");
-
-								while(! feof($file))
-  								{
-  									echo fgets($file). "<br />";
-  									}
-
- 									fclose($file);
-							?> </h2>
-						</td>
-					</tr>
+				<table border="1" align="center">
+						<tr>
+							<th>ORDER ID</th>
+							<th>PAYMENT ID</th>
+							<th>STATUS</th>
+						</tr>
+				<?php while($data = mysqli_fetch_assoc($result)){?>
+						<tr>
+							<td><?=$data['id']?></td>
+							<td><?=$data['method']?></td>
+							<td><?=$data['status']?></td>
+						</tr>
+				<?php } ?>
 				</table>
 			</td>
 		</tr>

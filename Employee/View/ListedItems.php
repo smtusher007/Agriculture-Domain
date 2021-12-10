@@ -1,6 +1,9 @@
 <?php
 
 	include('../Controller/Header.php');
+	require_once('../Model/itemModel.php');
+	$result = ListedItem();
+	$count = mysqli_num_rows($result);
 ?>
 <html>
 <head>
@@ -52,7 +55,7 @@
  						let iName = document.getElementById( "iName" );
  						let sName = document.getElementById("sName");
  						let iInfo = document.getElementById("iInfo");
- 						if( iName.value == "" || sName.value=="" || CsEmail.value=="")
+ 						if( iName.value == "" || sName.value=="" || iInfo.value=="")
  						{
   						alert("Please fill the empty field");
   						return false;
@@ -73,9 +76,48 @@
 					<input type="submit" name="submit" value="Add">
 
 				</form>
+				<table border="1" align="center">
+						<tr>
+							<th>ITEM NAME</th>
+							<th>SELLER'S NAME</th>
+							<th>ITEM INFORMATIONS</th>
+							<th>ACTION</th>
+						</tr>
+			<?php while($data = mysqli_fetch_assoc($result)){?>
+						<tr>
+							<td><?=$data['itemName']?></td>
+							<td><?=$data['sellerName']?></td>
+							<td><?=$data['itemInfo']?></td>
+							<td>
+								<a href="../Controller/editList.php?id=<?=$data['id']?>">Edit</a>
+								<a href="../Controller/deleteList.php?id=<?=$data['id']?>">Delete</a>
+							</td>
+						</tr>
+			<?php } ?>
+				</table>
 			</td>
 		</tr>
 	</table>
+
+
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		function ajax(){
+	let iName = document.getElementById('iName').value;
+	let sName = document.getElementById('sName').value;
+	let iInfo = document.getElementById('iInfo').value;
+
+	let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/itemList.php', false);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('iName='+iName);
+	xhttp.send('sName='+sName);
+	xhttp.send('iInfo='+iInfo);
+	
+}
+	</script>
 
 </body>
 </html>

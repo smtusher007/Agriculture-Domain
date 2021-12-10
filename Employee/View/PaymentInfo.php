@@ -1,6 +1,9 @@
 <?php
 
 	include('../Controller/Header.php');
+	require_once('../Model/paymentModel.php');
+	$result = paymentInfo();
+	$count = mysqli_num_rows($result);
 ?>
 <html>
 <head>
@@ -74,9 +77,32 @@
 
 				</form>
 				</center>
+				<table border="1" align="center">
+						<tr>
+							<th>ORDER ID</th>
+							<th>PAYMENT METHOD</th>
+						</tr>
+<?php while($data = mysqli_fetch_assoc($result)){?>
+						<tr>
+							<td><?=$data['id']?></td>
+							<td><?=$data['method']?></td>
+						</tr>
+<?php } ?>
+				</table>
 			</td>
 		</tr>
 	</table>
+	<script type="text/javascript">
+		function ajax(){
+	let oId = document.getElementById('oId').value;
+	let method = document.getElementById('method').value;
+	let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/paymentMethod.php', false);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('oId='+oId);
+	xhttp.send('method='+method);
+}
+	</script>
 
 </body>
 </html>

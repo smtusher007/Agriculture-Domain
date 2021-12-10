@@ -77,7 +77,7 @@
 					Order Item:
 					<input type="text" id="Item" name="Item" placeholder="Type Item"><br>
 					Quantity:
-					<input type="text" id="Quantity" name="Quantity" placeholder="Type ordered Quantity"><br>
+					<input type="text" id="QuQuantityantity" name="Quantity" placeholder="Type ordered Quantity"><br>
 					Price:
 					<input type="text" id="Price" name="Price" placeholder="Type price"><br>
 					<input type="submit" name="submit" value="Enter"></h3>
@@ -112,6 +112,24 @@
 			</td>
 		</tr>
 	</table>
+
+	<script type="text/javascript">
+		function ajax(){
+	let CuName = document.getElementById('CuName').value;
+	let SeName = document.getElementById('SeName').value;
+	let Item = document.getElementById('Item').value;
+	let Quantity = document.getElementById('Quantity').value;
+
+	let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/order.php', false);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('CuName='+CuName);
+	xhttp.send('SeName='+SeName);
+	xhttp.send('Item='+Item);
+	xhttp.send('Quantity='+Quantity);
+	
+}
+	</script>
 
 </body>
 </html>

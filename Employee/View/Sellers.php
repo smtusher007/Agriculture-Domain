@@ -110,6 +110,24 @@
 			</td>
 		</tr>
 	</table>
+	<script type="text/javascript">
+		function ajax(){
+	let SsName = document.getElementById('SsName').value;
+	let SsId = document.getElementById('SsId').value;
+	let SsEmail = document.getElementById('SsEmail').value;
+	let SsPhone = document.getElementById('SsPhone').value;
+	let SsAddress = document.getElementById('SsAddress').value; 
 
+	let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/seller.php', false);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('SsName='+SsName);
+	xhttp.send('SsId='+SsId);
+	xhttp.send('SsEmail='+SsEmail);
+	xhttp.send('SsPhone='+SsPhone);
+	xhttp.send('SsAddress='+SsAddress);
+	
+}
+	</script>
 </body>
 </html>

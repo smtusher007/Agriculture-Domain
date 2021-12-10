@@ -26,5 +26,11 @@
 				}
 
 	}
-
+	function showProfile(){
+		$con = getConnection();
+		$sql = "select name,email,username,gender,dob from signup";
+		$result = mysqli_query($con , $sql);
+		return $result;
+	
+	}
 ?>

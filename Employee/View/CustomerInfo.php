@@ -50,7 +50,7 @@
 			</h3>
 			</td>
 			<td>
-				<h3>Add Customer:</h3>
+				<h3 id="add" >Add Customer:</h3>
 				<script type="text/javascript">
 					function validate()
 					{
@@ -114,6 +114,26 @@
 			</td>
 		</tr>
 	</table>
+
+	<script type="text/javascript">
+		function ajax(){
+	let CsName = document.getElementById('CsName').value;
+	let CsId = document.getElementById('CsId').value;
+	let CsEmail = document.getElementById('CsEmail').value;
+	let CsPhone = document.getElementById('CsPhone').value;
+	let CsAddress = document.getElementById('CsAddress').value; 
+
+	let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/customer.php', false);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('CsName='+CsName);
+	xhttp.send('CsId='+CsId);
+	xhttp.send('CsEmail='+CsEmail);
+	xhttp.send('CsPhone='+CsPhone);
+	xhttp.send('CsAddress='+CsAddress);
+	
+}
+	</script>
 
 </body>
 </html>

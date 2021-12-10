@@ -72,6 +72,15 @@
 			</td>
 		</tr>
 	</table>
+	<script type="text/javascript">
+		function ajax(){
+	let report = document.getElementById('report').value;let xhttp = new XMLHttpRequest();
+	xhttp.open('POST', '../Controller/reportCollect.php', false);
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send('report='+report);
+	
+}
+	</script>
 
 </body>
 </html>
