@@ -20,4 +20,8 @@ Chan Mia - Customer
 Jahan Muhammah - Customer
 Badsha Ali Sheikh - Seller
 Idris Sarker - Seller
+<<<<<<< HEAD
 Jakir Hossain - Seller
+=======
+Jakir Hossain - Seller
+>>>>>>> parent of f9f2c74 (detail added)
