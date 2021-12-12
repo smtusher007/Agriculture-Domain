@@ -34,4 +34,25 @@
 
 	}
 
+	function getCustomById($id){
+		$con = getConnection();
+		$sql = "select * from customerinfo where id={$id}";
+		$result = mysqli_query($con, $sql);
+		$data = mysqli_fetch_assoc($result); 
+		return $data;
+	}
+
+	function editCustomer($customer){
+
+		$con = getConnection();
+		$sql = "update customerinfo set name='{$customer['name']}', nid='{$customer['nid']}', email='{$customer['email']}' , phoneNo='{$customer['phoneNo']}', address='{$customer['address']}' where id={$customer['id']}";
+		
+		if(mysqli_query($con, $sql)){
+			return true;
+		}else{
+			return false;
+		}
+
+	}
+
 ?>

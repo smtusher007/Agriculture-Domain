@@ -1,6 +1,6 @@
 <?php
 
-	include('../Controller/Header.php');
+	include_once('../Controller/Header.php');
 	require_once('../Model/customerModel.php');
 	$result = AllCustomers();
 	$count = mysqli_num_rows($result);
